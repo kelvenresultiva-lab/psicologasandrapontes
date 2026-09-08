@@ -38,7 +38,7 @@
     --rust-soft:rgba(199,55,59,.12);
     --navy:#152C45;
     --navy-deep:#233E58;
-    --blue-light:#EAF2F8;
+    --blue-light:#F2F8FC;
     --phoenix-red:#C7373B;
     --gold:#886735;
     --color-cta:#C7373B;
@@ -2272,6 +2272,186 @@ body{
   .perks-text h3{ font-size:21px; line-height:1.25; }
   .perks-text p{ margin-top:8px; max-width:280px; font-size:15px; line-height:1.6; }
 }
+
+/* ---- Benefícios refinados (seção "O que muda no seu dia a dia") ---- */
+.benefits-grid{
+  max-width:980px;
+  margin:64px auto 0;
+  display:grid;
+  grid-template-columns:1fr;
+  gap:0 72px;
+}
+@media(min-width:800px){
+  .benefits-grid{ grid-template-columns:1fr 1fr; }
+}
+.benefit-item{
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+  padding:26px 0;
+  border-bottom:1px solid rgba(35,62,88,.09);
+}
+.benefits-col .benefit-item:last-child{ border-bottom:none; }
+.benefit-icon{
+  flex-shrink:0;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:var(--blue-light);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.benefit-icon svg{ display:block; }
+.benefit-title{
+  font-family:'Playfair Display',serif;
+  font-weight:600;
+  font-size:19px;
+  line-height:1.3;
+  color:var(--navy-deep);
+  margin:0 0 6px;
+}
+.benefit-text{
+  font-family:'Manrope',sans-serif;
+  font-size:15px;
+  font-weight:400;
+  line-height:1.65;
+  color:var(--ink);
+  opacity:.78;
+  margin:0;
+  max-width:320px;
+}
+.benefits-highlight{
+  max-width:980px;
+  margin:8px auto 0;
+  display:flex;
+  align-items:center;
+  gap:22px;
+  background:var(--blue-light);
+  border-radius:22px;
+  padding:34px 40px;
+}
+@media(max-width:640px){
+  .benefits-highlight{ flex-direction:column; text-align:center; padding:32px 24px; }
+}
+.benefits-highlight .benefit-icon{ background:#FFFFFF; }
+.benefits-highlight .benefit-title{ font-size:20px; }
+.benefits-closing{
+  max-width:680px;
+  margin:72px auto 0;
+  text-align:center;
+}
+.benefits-closing-ornament{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  margin:0 auto 22px;
+}
+.benefits-closing-ornament .faq-ornament-line{ width:30px; }
+.benefits-closing p{
+  font-family:'Playfair Display',serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:24px;
+  letter-spacing:.01em;
+  line-height:1.55;
+  color:var(--navy-deep);
+  margin:0;
+}
+.benefits-closing p + p{
+  margin-top:6px;
+}
+
+/* ---- Mobile dedicado (320–767px) só pra seção #sinais — não herda
+   proporção do desktop, cada peça foi pensada pro tamanho da tela. ---- */
+@media(max-width:767px){
+  #sinais{ overflow-x:hidden; }
+  #sinais .container{ width:100%; max-width:100%; padding-left:22px; padding-right:22px; box-sizing:border-box; }
+
+  #sinais .signs-header{ padding:0; max-width:100%; }
+  #sinais .signs-eyebrow{ font-size:11px; letter-spacing:.14em; }
+  #sinais .signs-title{
+    margin-top:14px;
+    font-size:36px;
+    line-height:1.08;
+    max-width:320px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+  #sinais .signs-intro{
+    margin-top:14px;
+    font-size:15px;
+    line-height:1.6;
+    max-width:340px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  #sinais .benefits-grid{
+    margin-top:36px;
+    width:100%;
+    max-width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:0;
+  }
+  #sinais .benefits-col{ display:contents; }
+  #sinais .benefit-item{
+    display:flex;
+    align-items:flex-start;
+    gap:14px;
+    width:100%;
+    padding:18px 0;
+    border-bottom:1px solid rgba(35,62,88,.09);
+    box-sizing:border-box;
+  }
+  #sinais .benefits-col .benefit-item:last-child{ border-bottom:1px solid rgba(35,62,88,.09); }
+  #sinais .benefits-grid .benefits-col:last-child .benefit-item:last-child{ border-bottom:none; }
+  #sinais .benefit-icon{ width:42px; height:42px; flex-shrink:0; }
+  #sinais .benefit-icon svg{ width:19px; height:19px; }
+  #sinais .benefit-item > div{ flex:1; min-width:0; }
+  #sinais .benefit-title{ font-size:16px; line-height:1.25; margin-bottom:5px; }
+  #sinais .benefit-text{ font-size:14px; line-height:1.45; max-width:100%; opacity:.82; }
+
+  #sinais .benefits-highlight{
+    flex-direction:row;
+    align-items:center;
+    text-align:left;
+    width:100%;
+    max-width:100%;
+    box-sizing:border-box;
+    border-radius:18px;
+    padding:20px;
+    margin-top:22px;
+    gap:15px;
+  }
+  #sinais .benefits-highlight .benefit-icon{ width:44px; height:44px; }
+  #sinais .benefits-highlight .benefit-title{ font-size:17px; line-height:1.25; margin-bottom:5px; }
+  #sinais .benefits-highlight .benefit-text{ font-size:13px; line-height:1.45; }
+
+  #sinais .benefits-closing{
+    margin-top:38px;
+    max-width:340px;
+    padding-left:0;
+    padding-right:0;
+    margin-left:auto;
+    margin-right:auto;
+    box-sizing:border-box;
+  }
+  #sinais .benefits-closing-ornament{ margin-bottom:16px; }
+  #sinais .benefits-closing-ornament .faq-ornament-line{ width:22px; }
+  #sinais .benefits-closing p{ font-size:19px; line-height:1.45; }
+  #sinais .benefits-closing p + p{ margin-top:4px; }
+
+  #sinais .signs-cta{
+    margin-top:26px;
+    margin-bottom:50px;
+    padding:0 22px;
+    max-width:100%;
+    box-sizing:border-box;
+  }
+}
 </style>
 </head>
 <body>
@@ -2310,8 +2490,8 @@ body{
 
 <section class="hero" id="hero">
   <picture class="hero-bg" aria-hidden="true">
-    <source media="(min-width:1024px)" srcset="images/hero-bg-desktop.webp?v=3">
-    <img src="images/hero-bg-mobile.webp?v=3" alt="">
+    <source media="(min-width:1024px)" srcset="images/sandra-hero-desktop-new.png">
+    <img src="images/sandra-hero-mobile-new.png" alt="">
   </picture>
   <div class="hero-overlay">
     <div class="container">
@@ -2321,10 +2501,10 @@ body{
         <span class="brand-rule" aria-hidden="true"></span>
 
         <h1 class="headline">
-          <span class="hl-line"><span class="hl-navy">Psicologia clínica pra quem busca </span><span class="hl-red">equilíbrio emocional</span><span class="hl-navy"> e </span><span class="hl-red">clareza mental</span><span class="hl-navy"> desde a primeira consulta</span></span>
+          <span class="hl-line"><span class="hl-navy">Psicoterapia para </span><span class="hl-red">compreender o que você vive</span><span class="hl-navy"> e </span><span class="hl-red">transformar o que precisa mudar</span><span class="hl-navy">.</span></span>
         </h1>
 
-        <p class="subtext">Um espaço seguro para você se conhecer, ressignificar histórias e construir novos caminhos.</p>
+        <p class="subtext">Um espaço seguro para você se conhecer, ressignificar histórias e construir novos caminhos, com acolhimento, experiência e profundidade.</p>
 
         <div class="hero-badges">
           <div class="hero-badge">
@@ -2411,54 +2591,76 @@ body{
       <span class="signs-eyebrow-line" aria-hidden="true"></span>
       <h2 class="signs-title signs-title-desktop">O que muda no seu dia a dia</h2>
       <h2 class="signs-title signs-title-mobile">O que muda no<br>seu dia a dia</h2>
-      <p class="signs-intro">Um espaço para compreender melhor o que você sente, fortalecer suas relações e desenvolver novas formas de lidar com os desafios da vida.</p>
+      <p class="signs-intro">A psicoterapia pode ajudar você a compreender melhor o que sente, reconhecer padrões e construir novas formas de lidar com os desafios da vida.</p>
     </div>
 
-    <div class="perks-grid">
-      <div class="perks-item">
-        <span class="perks-number" aria-hidden="true">01</span>
-        <div class="perks-text">
-          <h3>Redução da ansiedade</h3>
-          <p>Desenvolva estratégias reais para lidar com a ansiedade do dia a dia, com mais equilíbrio emocional.</p>
+    <div class="benefits-grid">
+      <div class="benefits-col">
+        <div class="benefit-item">
+          <span class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3.24.99-4.5 2.5C10.74 3.99 9.26 3 7.5 3A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></span>
+          <div>
+            <h3 class="benefit-title">Compreender suas emoções</h3>
+            <p class="benefit-text">Entender melhor suas necessidades e o que você sente.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+          <div>
+            <h3 class="benefit-title">Fortalecer a autoestima</h3>
+            <p class="benefit-text">Desenvolver mais autoconfiança e segurança interna.</p>
+          </div>
+        </div>
+        <div class="benefit-item">
+          <span class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>
+          <div>
+            <h3 class="benefit-title">Reconhecer padrões</h3>
+            <p class="benefit-text">Perceber repetições que já não fazem sentido para você.</p>
+          </div>
         </div>
       </div>
-      <div class="perks-item">
-        <div class="perks-text">
-          <h3>Fortalecimento da autoestima</h3>
-          <p>Construa uma relação mais saudável com você, reconhecendo seu valor e suas conquistas.</p>
+
+      <div class="benefits-col">
+        <div class="benefit-item">
+          <span class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+          <div>
+            <h3 class="benefit-title">Lidar com situações difíceis</h3>
+            <p class="benefit-text">Encontrar mais clareza e equilíbrio diante dos desafios.</p>
+          </div>
         </div>
-        <span class="perks-number" aria-hidden="true">02</span>
-      </div>
-      <div class="perks-item">
-        <span class="perks-number" aria-hidden="true">03</span>
-        <div class="perks-text">
-          <h3>Melhora nos relacionamentos</h3>
-          <p>Fortaleça vínculos e desenvolva uma comunicação mais saudável com quem você ama.</p>
+        <div class="benefit-item">
+          <span class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3.128a4 4 0 0 1 0 7.744"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M4 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="10" cy="8" r="4"/></svg></span>
+          <div>
+            <h3 class="benefit-title">Melhorar relacionamentos</h3>
+            <p class="benefit-text">Construir vínculos mais saudáveis e reconhecer limites.</p>
+          </div>
         </div>
-      </div>
-      <div class="perks-item">
-        <div class="perks-text">
-          <h3>Mais segurança para decidir</h3>
-          <p>Ganhe clareza e confiança para tomar decisões importantes na sua vida, sem culpa ou insegurança.</p>
+        <div class="benefit-item">
+          <span class="benefit-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg></span>
+          <div>
+            <h3 class="benefit-title">Fazer escolhas conscientes</h3>
+            <p class="benefit-text">Agir de forma mais alinhada com quem você é.</p>
+          </div>
         </div>
-        <span class="perks-number" aria-hidden="true">04</span>
       </div>
     </div>
 
-    <div class="signs-cta">
-      <div class="signs-cta-left">
-        <span class="signs-cta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#886735" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 3 2 6 0 9-2-3-2-6 0-9Z"></path><path d="M12 9c2.5 1 4 3 4 6-3 0-5-1.5-6-4"></path><path d="M12 9c-2.5 1-4 3-4 6 3 0 5-1.5 6-4"></path><path d="M12 15v6"></path></svg></span>
-        <div>
-          <p class="signs-cta-title">Você <span class="signs-cta-accent">não precisa</span> enfrentar tudo isso sozinho.</p>
-          <p class="signs-cta-text">A psicoterapia pode te ajudar a compreender o que sente, aliviar o sofrimento e construir novos caminhos.</p>
-        </div>
+    <div class="benefits-highlight">
+      <span class="benefit-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v8"/><path d="m4.93 10.93 1.41 1.41"/><path d="M2 18h2"/><path d="M20 18h2"/><path d="m19.07 10.93-1.41 1.41"/><path d="M22 22H2"/><path d="m8 6 4-4 4 4"/><path d="M16 18a4 4 0 0 0-8 0"/></svg></span>
+      <div>
+        <h3 class="benefit-title">Viver com mais leveza e autonomia</h3>
+        <p class="benefit-text">Desenvolver recursos internos para conduzir a vida com mais consciência.</p>
       </div>
-      <span class="signs-cta-divider" aria-hidden="true"></span>
-      <img src="images/signs-cta-photo.webp" alt="" aria-hidden="true" class="signs-cta-scene" />
-      <div class="signs-cta-right">
-        <a href="https://wa.me/5531999717010?text=Ol%C3%A1%2C%20Sandra!%20Encontrei%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20conversa%20com%20voc%C3%AA." target="_blank" rel="noopener" class="signs-cta-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.28 1.18-1.77 1.24-.45.06-.99.24-3.3-.7-2.78-1.15-4.53-3.98-4.67-4.17-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.01.95-2.28.25-.27.55-.34.73-.34.18 0 .36 0 .52.01.17.01.39-.06.6.46.22.53.75 1.83.81 1.96.06.13.1.28.02.45-.08.17-.13.28-.25.43-.13.15-.27.34-.38.46-.13.13-.26.27-.11.53.15.26.68 1.12 1.46 1.81 1 .89 1.84 1.16 2.1 1.29.26.13.41.11.56-.07.15-.17.65-.75.82-1.01.17-.26.34-.22.57-.13.23.09 1.47.69 1.72.82.25.13.42.19.48.3.06.11.06.61-.16 1.24z"></path></svg>Conversar no WhatsApp</a>
-        <p class="signs-cta-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#886735" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path></svg>Atendimento online e presencial</p>
-      </div>
+    </div>
+
+    <div class="benefits-closing">
+      <span class="benefits-closing-ornament" aria-hidden="true"><span class="faq-ornament-line"></span><span class="faq-ornament-diamond"></span><span class="faq-ornament-line"></span></span>
+      <p>Não se trata de mudar quem você é.</p>
+      <p>Trata-se de ampliar suas possibilidades de ser e de viver.</p>
+    </div>
+
+
+    <div class="signs-cta" style="justify-content:center;padding:0;">
+      <a href="https://wa.me/5531999717010?text=Ol%C3%A1%2C%20Sandra!%20Encontrei%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20conversa%20com%20voc%C3%AA." target="_blank" rel="noopener" class="signs-cta-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.28 1.18-1.77 1.24-.45.06-.99.24-3.3-.7-2.78-1.15-4.53-3.98-4.67-4.17-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.01.95-2.28.25-.27.55-.34.73-.34.18 0 .36 0 .52.01.17.01.39-.06.6.46.22.53.75 1.83.81 1.96.06.13.1.28.02.45-.08.17-.13.28-.25.43-.13.15-.27.34-.38.46-.13.13-.26.27-.11.53.15.26.68 1.12 1.46 1.81 1 .89 1.84 1.16 2.1 1.29.26.13.41.11.56-.07.15-.17.65-.75.82-1.01.17-.26.34-.22.57-.13.23.09 1.47.69 1.72.82.25.13.42.19.48.3.06.11.06.61-.16 1.24z"></path></svg>Conversar no WhatsApp</a>
     </div>
   </div>
 </section>
@@ -2477,13 +2679,15 @@ body{
         <span class="eyebrow about-eyebrow">Olá, sou</span>
         <h2 class="about-title">Sandra Pontes</h2>
 
-        <p>Sou psicóloga há mais de 30 anos, dedicada ao desenvolvimento humano. Sou Master e Trainer em Programação Neurolinguística (PNL) e uso esse olhar para te ajudar a desenvolver autoconhecimento, inteligência emocional e mais clareza para promover mudanças conscientes na sua vida.</p>
+        <p>Sou Sandra Pontes, psicóloga, especialista em Desenvolvimento Humano, com 35 anos de experiência acompanhando pessoas em diferentes momentos e desafios da vida.</p>
 
-        <p>Ao longo da minha trajetória, construí uma atuação voltada ao desenvolvimento pessoal e profissional, caminhando ao lado de cada pessoa para identificar padrões limitantes, ampliar a percepção sobre si mesma e desenvolver novos recursos para lidar com os desafios de forma mais equilibrada e consciente.</p>
+        <p>Minha trajetória também inclui formação como Master e Trainer em Programação Neurolinguística (PNL), além de experiência como mentora e facilitadora de processos de desenvolvimento pessoal.</p>
 
-        <p>Atendo adultos, homens e mulheres, que estão buscando se compreender melhor, superar desafios emocionais, transformar padrões que se repetem e construir uma relação mais consciente consigo e com a própria vida.</p>
+        <p>Meu trabalho une a psicoterapia à PNL, utilizando diferentes recursos para ajudar cada pessoa a compreender melhor sua história, ampliar sua percepção e construir novas possibilidades para o presente.</p>
 
-        <p>Atendo presencialmente em Belo Horizonte/MG e online para todo o Brasil.</p>
+        <p>Acredito que cada pessoa tem uma história única — e que olhar para ela com acolhimento, consciência e responsabilidade pode abrir caminhos para mudanças significativas.</p>
+
+        <p>Meu propósito é acompanhar você nesse processo, respeitando seu tempo, sua história e o que faz sentido para a sua vida.</p>
 
         <a href="https://wa.me/5531999717010?text=Ol%C3%A1%2C%20Sandra!%20Encontrei%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20conversa%20com%20voc%C3%AA." target="_blank" rel="noopener" class="btn btn-primary about-cta">Agendar uma conversa</a>
       </div>
@@ -2506,7 +2710,6 @@ body{
         <p class="testimonial-text">Excelente profissional, fiz acompanhamento com a Sandra por mais de um ano e sempre me senti acolhida, o consultório é um ambiente aconchegante e vi que o acompanhamento me fez muito bem.</p>
         <div class="testimonial-meta">
           <span class="testimonial-name">Thaila Karina</span>
-          <span class="testimonial-time">5 meses atrás</span>
         </div>
       </article>
       <article class="testimonial">
@@ -2514,7 +2717,6 @@ body{
         <p class="testimonial-text">A Sandra é minha terapeuta, é doce, boa conselheira, tem me ajudado muito no meu dia a dia e na minha evolução como ser humano, uma profissional com uma grande amabilidade e conhecimento incontestável. Sou muito grata.</p>
         <div class="testimonial-meta">
           <span class="testimonial-name">Rosária Sousa</span>
-          <span class="testimonial-time">4 meses atrás</span>
         </div>
       </article>
       <article class="testimonial">
@@ -2522,7 +2724,6 @@ body{
         <p class="testimonial-text">Tive o prazer de ser atendida pela Sandra... uma pessoa de luz e excelente profissional. A sessão foi tão leve, me fez refletir sobre pontos importantes que precisavam de observação. E tudo foi de forma fluída e muito reflexiva. Muito obrigada Sandra por fazer parte dessa minha longa caminhada, chamada: vida.</p>
         <div class="testimonial-meta">
           <span class="testimonial-name">Fernanda Firmino</span>
-          <span class="testimonial-time">um ano atrás</span>
         </div>
       </article>
       <article class="testimonial">
@@ -2530,7 +2731,6 @@ body{
         <p class="testimonial-text">Sou extremamente grata por ter conhecido a Sandra, e por ter tido a honra de ter sido atendida por ela. A metodologia que ela usa é singular e eficaz. Sinto que através da Sandra me tornei uma pessoa melhor, aprendi formas de enxergar o outro e a mim mesmo de forma saudável. Sem dúvidas é uma pessoa de caráter e confiável.</p>
         <div class="testimonial-meta">
           <span class="testimonial-name">Jessica Santos</span>
-          <span class="testimonial-time">um ano atrás</span>
         </div>
       </article>
       <article class="testimonial">
@@ -2538,7 +2738,6 @@ body{
         <p class="testimonial-text">Faço acompanhamento com a Sandra há quase 10 anos e não abro mão! É uma profissional excepcional além de ser uma pessoa extremamente inteligente, dedicada e sábia...</p>
         <div class="testimonial-meta">
           <span class="testimonial-name">Sophia Antunes</span>
-          <span class="testimonial-time">um ano atrás</span>
         </div>
       </article>
       <article class="testimonial">
@@ -2546,7 +2745,6 @@ body{
         <p class="testimonial-text">Já faço acompanhamento há mais de 5 anos com a Dra. Sandra. Sempre pontual. Consultório muito confortável, agradável, bem localizado e de fácil acesso...</p>
         <div class="testimonial-meta">
           <span class="testimonial-name">Vinicius Fernandes de Morais</span>
-          <span class="testimonial-time">um ano atrás</span>
         </div>
       </article>
     </div>
@@ -2564,8 +2762,10 @@ body{
         <h2 class="faq-headline faq-headline-desktop"><span class="faq-navy">Como funciona a sessão </span><span class="faq-red">comigo?</span></h2>
         <h2 class="faq-headline faq-headline-mobile"><span class="faq-navy">Como funciona<br>a sessão<br></span><span class="faq-red">comigo?</span></h2>
 
-        <p class="faq-card-p">Meu atendimento é individualizado e construído de acordo com a história, as necessidades e os objetivos de cada pessoa. A partir de uma escuta acolhedora e sem julgamentos, buscamos compreender pensamentos, emoções e comportamentos que podem estar dificultando o bem-estar e as escolhas no presente.</p>
-        <p class="faq-card-p">Integro recursos da Psicoterapia e da Programação Neurolinguística (PNL), utilizando técnicas e experiências práticas que favorecem o autoconhecimento, a ressignificação e a transformação. O processo acontece no ritmo de cada pessoa, com acolhimento, profundidade e foco em mudanças possíveis e significativas.</p>
+        <p class="faq-card-p">Cada pessoa chega com uma história, um momento e uma necessidade diferente. Por isso, o processo é construído de forma individual e personalizada.</p>
+        <p class="faq-card-p">Nas sessões, você terá um espaço de escuta e acolhimento para falar sobre o que está vivendo, compreender melhor seus pensamentos, emoções e comportamentos e, juntos, encontrarmos caminhos que façam sentido para você.</p>
+        <p class="faq-card-p">Meu trabalho integra psicoterapia e recursos da Programação Neurolinguística (PNL), sempre considerando suas necessidades e objetivos.</p>
+        <p class="faq-card-p">Não existe fórmula pronta. Existe um processo construído com você.</p>
 
         <a href="https://wa.me/5531999717010?text=Ol%C3%A1%2C%20Sandra!%20Encontrei%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20conversa%20com%20voc%C3%AA." target="_blank" rel="noopener" class="faq-cta-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.35 5.07L2 22l5.06-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.28 1.18-1.77 1.24-.45.06-.99.24-3.3-.7-2.78-1.15-4.53-3.98-4.67-4.17-.14-.19-1.12-1.49-1.12-2.84 0-1.35.7-2.01.95-2.28.25-.27.55-.34.73-.34.18 0 .36 0 .52.01.17.01.39-.06.6.46.22.53.75 1.83.81 1.96.06.13.1.28.02.45-.08.17-.13.28-.25.43-.13.15-.27.34-.38.46-.13.13-.26.27-.11.53.15.26.68 1.12 1.46 1.81 1 .89 1.84 1.16 2.1 1.29.26.13.41.11.56-.07.15-.17.65-.75.82-1.01.17-.26.34-.22.57-.13.23.09 1.47.69 1.72.82.25.13.42.19.48.3.06.11.06.61-.16 1.24z"></path></svg>QUERO CONVERSAR SOBRE O MEU CASO</a>
 
@@ -2593,52 +2793,43 @@ body{
           <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
         </button>
         <div class="faq-answer">
-          <p>As sessões de psicoterapia duram 50 minutos e podem ser online ou presenciais, sempre pensadas para apoiar sua jornada de autoconhecimento e transformação.</p>
+          <p>É um momento para nos conhecermos, você contar o que está vivendo e entendermos juntos o que você busca para o seu processo.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span>A terapia realmente funciona?</span>
+          <span>A terapia é presencial ou online?</span>
           <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
         </button>
         <div class="faq-answer">
-          <p>Sim. Na terapia você encontra um espaço seguro para falar sem julgamento — muitas vezes coisas que nunca conseguiu dizer a ninguém. Só de compartilhar, a carga já diminui. Aos poucos, você passa a enxergar com mais clareza padrões, pensamentos e reações que não percebia sozinho, e isso te ajuda a ter mais assertividade nas suas escolhas.</p>
+          <p>Os atendimentos podem ser realizados presencialmente, em Belo Horizonte, ou de forma online.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span>Quanto tempo dura o tratamento?</span>
+          <span>Quanto tempo dura uma sessão?</span>
           <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
         </button>
         <div class="faq-answer">
-          <p>Depende do que te trouxe até aqui. Uma questão mais pontual — uma crise, um momento difícil, um medo específico — costuma ser mais rápida de trabalhar. Já padrões antigos ou mudanças na forma de se relacionar naturalmente levam mais tempo. O objetivo também influencia: aliviar um sofrimento pontual é diferente de buscar autoconhecimento e crescimento mais profundos. Mas o que mais determina o ritmo é a sua participação — o quanto você se dedica, reflete e aplica no dia a dia o que conversamos.</p>
+          <p>Cada sessão tem, em média, 50 minutos.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span>Atende por convênio?</span>
+          <span>Preciso saber exatamente o que está acontecendo comigo para começar a terapia?</span>
           <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
         </button>
         <div class="faq-answer">
-          <p></p>
+          <p>Não. Você não precisa chegar com tudo organizado ou saber exatamente o que dizer. Podemos começar a partir do que está acontecendo hoje.</p>
         </div>
       </div>
       <div class="faq-item">
         <button class="faq-question" type="button" aria-expanded="false">
-          <span>A terapia é sigilosa?</span>
+          <span>Como posso agendar?</span>
           <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
         </button>
         <div class="faq-answer">
-          <p>Sim. O sigilo é dever profissional previsto no Código de Ética do psicólogo e só é rompido nas situações previstas em lei, como risco à vida — e, mesmo nesses casos, isso é conversado com você.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" type="button" aria-expanded="false">
-          <span>Atende online e presencial?</span>
-          <span class="faq-chevron"><svg viewBox="0 0 24 24" fill="none" stroke="#C7373B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"></path></svg></span>
-        </button>
-        <div class="faq-answer">
-          <p>Sim. Atendo presencialmente no consultório em Belo Horizonte (MG) e também online, para todo o Brasil. A sessão online tem a mesma duração e a mesma estrutura da presencial, por videochamada — você só precisa de internet estável e de um lugar tranquilo para falar à vontade.</p>
+          <p>Você pode entrar em contato pelo WhatsApp ou escolher a opção de contato que for mais confortável para você.</p>
         </div>
       </div>
     </div>
@@ -2665,7 +2856,7 @@ body{
     <div class="location-item">
       <span class="location-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 6-10 7L2 6"></path></svg></span>
       <p class="location-label">E-mail de Contato</p>
-      <p class="location-value">[PENDENTE — e-mail de contato]</p>
+      <p class="location-value"><a href="mailto:sandrapontespsi@gmail.com">sandrapontespsi@gmail.com</a></p>
     </div>
   </div>
 </section>
@@ -2677,9 +2868,10 @@ body{
       <div class="footer-about">
         <img class="footer-logo-mark" alt="" aria-hidden="true" src="images/logo-footer.webp" />
         <p class="footer-brand-name">Sandra Pontes</p>
-        <p class="footer-brand-role">Psicóloga</p>
+        <p class="footer-brand-role">Psicóloga &bull; CRP 04/10451</p>
         <span class="footer-ornament" aria-hidden="true"><span class="footer-ornament-line"></span><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#886735" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2 3 2 6 0 9-2-3-2-6 0-9Z"></path><path d="M12 9c2.5 1 4 3 4 6-3 0-5-1.5-6-4"></path><path d="M12 9c-2.5 1-4 3-4 6 3 0 5-1.5 6-4"></path><path d="M12 15v6"></path></svg><span class="footer-ornament-line"></span></span>
         <p class="footer-tagline">Cuidado que escuta. Terapia que transforma.</p>
+        <p class="footer-tagline">Belo Horizonte – MG | Atendimento presencial e online</p>
         <div class="footer-social footer-social-text">
           <a href="https://www.instagram.com/sandrapontespsico/" target="_blank" rel="noopener">@sandrapontespsico</a>
         </div>
@@ -2706,6 +2898,10 @@ body{
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             <span>Av. Cristiano Machado, 1630<br>Cidade Nova<br>Belo Horizonte - MG</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 6-10 7L2 6"></path></svg>
+            <a href="mailto:sandrapontespsi@gmail.com" style="color:inherit; text-decoration:none;">sandrapontespsi@gmail.com</a>
           </li>
         </ul>
       </div>
